@@ -100,8 +100,16 @@ button:hover{opacity:.85}
 
 <script>
 function detect(){
-  const url = document.getElementById("url").value.trim();
-  if(!url) return alert("Ndlogok masukan linknya");
+  const input = document.getElementById("url");
+  const url = input.value.trim();
+
+  if(!url){
+    alert("Ndlogok masukan linknya");
+    return;
+  }
+
+  // auto copy link
+  navigator.clipboard.writeText(url);
 
   if(url.includes("tiktok.com")){
     window.open(
@@ -110,12 +118,15 @@ function detect(){
     );
   }
   else if(url.includes("instagram.com")){
+    alert("Link sudah disalin. Paste di igram.world");
     window.open("https://igram.world/en/", "_blank");
   }
   else if(url.includes("facebook.com") || url.includes("fb.watch")){
+    alert("Link sudah disalin. Paste di fdownloader");
     window.open("https://fdownloader.net/", "_blank");
   }
   else if(url.includes("youtube.com") || url.includes("youtu.be")){
+    alert("Link sudah disalin. Paste di yt1s");
     window.open("https://yt1s.com/", "_blank");
   }
   else{
