@@ -1,6 +1,14 @@
 function detect(){
-  const url = document.getElementById("url").value.trim();
-  if(!url){
+  const input = document.getElementById("url");
+
+  if(!input){
+    alert("Input URL tidak ditemukan");
+    return;
+  }
+
+  const url = input.value.trim();
+
+  if(url === ""){
     alert("Masukkan link video");
     return;
   }
@@ -12,7 +20,7 @@ function detect(){
     );
   }
   else if(url.includes("instagram.com")){
-    window.open("https://snapinsta.app/", "_blank");
+    window.open("https://igram.world/en/", "_blank");
   }
   else if(url.includes("facebook.com") || url.includes("fb.watch")){
     window.open("https://fdownloader.net/", "_blank");
