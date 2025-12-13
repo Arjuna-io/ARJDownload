@@ -1,17 +1,26 @@
-function ig(){
-  let v=document.getElementById("ig").value;
-  if(!v)return alert("Masukkan link Instagram");
-  open("https://snapinsta.app/");
-}
+function detect(){
+  const url = document.getElementById("url").value.trim();
+  if(!url){
+    alert("Masukkan link video");
+    return;
+  }
 
-function fb(){
-  let v=document.getElementById("fb").value;
-  if(!v)return alert("Masukkan link Facebook");
-  open("https://fdownloader.net/");
-}
-
-function yt(){
-  let v=document.getElementById("yt").value;
-  if(!v)return alert("Masukkan link YouTube");
-  open("https://yt1s.com/");
+  if(url.includes("tiktok.com")){
+    window.open(
+      "https://www.tikwm.com/video/media/hdplay?url=" + encodeURIComponent(url),
+      "_blank"
+    );
+  }
+  else if(url.includes("instagram.com")){
+    window.open("https://snapinsta.app/", "_blank");
+  }
+  else if(url.includes("facebook.com") || url.includes("fb.watch")){
+    window.open("https://fdownloader.net/", "_blank");
+  }
+  else if(url.includes("youtube.com") || url.includes("youtu.be")){
+    window.open("https://yt1s.com/", "_blank");
+  }
+  else{
+    alert("Platform tidak dikenali");
+  }
 }
