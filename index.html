@@ -177,13 +177,13 @@ button:hover{opacity:.85}
 <script>
 function detect(){
   const url = document.getElementById("url").value.trim();
-  if(!url) return alert("Masukkan link video");
+  if(!url){
+    alert("Linknya di lebokno ndlogok!!");
+    return;
+  }
 
   if(url.includes("tiktok.com")){
-    window.open(
-      "https://www.tikwm.com/video/media/hdplay?url=" + encodeURIComponent(url),
-      "_blank"
-    );
+    window.open("https://snaptik.app/", "_blank");
   }
   else if(url.includes("instagram.com")){
     window.open("https://igram.world/en/", "_blank");
@@ -192,10 +192,10 @@ function detect(){
     window.open("https://fdownloader.net/", "_blank");
   }
   else if(url.includes("youtube.com") || url.includes("youtu.be")){
-    window.open("https://id.ytmp3.mobi/v1/, "_blank");
+    window.open("https://id.ytmp3.mobi/", "_blank");
   }
   else{
-    alert("Platform tidak dikenali");
+    alert("Platform tidak dikenali 😅");
   }
 }
 </script>
