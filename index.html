@@ -78,9 +78,8 @@ button:hover{opacity:.85}
 }
 
 .bg-images img{
-  position: absolute;
-  width: 260px;
-  height: 380px;
+  width: 420px;
+  height: 260px;
   object-fit: cover;
   border-radius: 20px;
   filter: blur(10px) brightness(0.45);
@@ -89,27 +88,24 @@ button:hover{opacity:.85}
     transform 0.7s cubic-bezier(.2,.8,.2,1),
     opacity 0.5s ease;
 }
-
 .img-left{
-  left: calc(50% - 520px);
+  left: calc(50% - 500px);
   top: 50%;
   transform:
     translateY(-50%)
-    rotateY(35deg)
-    translateX(60px)
+    rotateY(28deg)
+    rotateZ(-4deg)
     scale(0.9);
 }
-
 .img-right{
-  right: calc(50% - 520px);
+  right: calc(50% - 500px);
   top: 50%;
   transform:
     translateY(-50%)
-    rotateY(-35deg)
-    translateX(-60px)
+    rotateY(-28deg)
+    rotateZ(4deg)
     scale(0.9);
 }
-
 .card{
   position: relative;
   z-index: 10;
@@ -127,16 +123,16 @@ button:hover{opacity:.85}
 .card:focus-within ~ .bg-images .img-left{
   transform:
     translateY(-50%)
-    rotateY(20deg)
-    translateX(0)
+    rotateY(18deg)
+    rotateZ(-2deg)
     scale(1);
 }
 
 .card:focus-within ~ .bg-images .img-right{
   transform:
     translateY(-50%)
-    rotateY(-20deg)
-    translateX(0)
+    rotateY(-18deg)
+    rotateZ(2deg)
     scale(1);
 }
 
@@ -168,11 +164,10 @@ button:hover{opacity:.85}
   </div>
 </div>
 
-<body>
-  <div class="bg-images">
-    <img src="bg1.png" class="img-left">
-    <img src="bg2.png" class="img-right">
-  </div>
+<div class="bg-images">
+  <img src="bg1.png" class="img-left">
+  <img src="bg2.png" class="img-right">
+</div>
 
 <script>
 function detect(){
