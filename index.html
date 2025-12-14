@@ -70,6 +70,51 @@ button:hover{opacity:.85}
   border-radius:10px;
   text-align:center;
 }
+.bg-images{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bg-images img{
+  position: absolute;
+  width: 220px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 18px;
+  filter: blur(12px) brightness(0.5);
+  opacity: 0;
+  transform: translateY(40px) scale(0.9);
+  transition: all 0.5s ease;
+}
+.img-left{
+  left: calc(50% - 360px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+}
+.img-right{
+  right: calc(50% - 360px);
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+}
+.card{
+  position: relative;
+  z-index: 10;
+  transition: transform 0.4s ease;
+}
+.card:focus-within{
+  transform: scale(1.03);
+}
+.card:focus-within ~ .bg-images img,
+.bg-images img{
+  opacity: 0;
+}
+.card:focus-within ~ .bg-images img,
+.card:focus-within + .bg-images img{
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
 </style>
 </head>
 <body>
