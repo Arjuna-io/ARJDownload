@@ -70,6 +70,74 @@ button:hover{opacity:.85}
   border-radius:10px;
   text-align:center;
 }
+.bg-images{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  perspective: 1200px;
+}
+
+.bg-images img{
+  position: absolute; 
+  width: 420px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: blur(10px) brightness(0.45);
+  opacity: 0;
+  transition: 
+    transform 0.7s cubic-bezier(.2,.8,.2,1),
+    opacity 0.5s ease;
+}
+.img-left{
+  left: 50%;
+  top: 50%;
+  transform:
+    translate(-140%, -50%)
+    rotateY(28deg)
+    rotateZ(-4deg)
+    scale(0.9);
+}
+
+.img-right{
+  left: 50%;
+  top: 50%;
+  transform:
+    translate(40%, -50%)
+    rotateY(-28deg)
+    rotateZ(4deg)
+    scale(0.9);
+}
+.card{
+  position: relative;
+  z-index: 10;
+  transition: transform 0.4s ease;
+}
+
+.card:focus-within{
+  transform: scale(1.03);
+}
+
+.card:focus-within ~ .bg-images img{
+  opacity: 1;
+}
+
+.card:focus-within ~ .bg-images .img-left{
+  transform:
+    translate(-120%, -50%)
+    rotateY(18deg)
+    rotateZ(-2deg)
+    scale(1);
+}
+
+.card:focus-within ~ .bg-images .img-right{
+  transform:
+    translate(20%, -50%)
+    rotateY(-18deg)
+    rotateZ(2deg)
+    scale(1);
+}
 </style>
 </head>
 <body>
