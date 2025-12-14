@@ -10,10 +10,15 @@
 *{box-sizing:border-box}
 body{
   margin:0;
-  min-height:100vh;
+  min-height:100svh;
   background:radial-gradient(circle at top,#020617,#000);
   font-family:system-ui,Arial,sans-serif;
   color:#fff;
+  display:grid;
+  place-items:center;
+}
+  .center{
+  min-height:100svh;
   display:grid;
   place-items:center;
 }
@@ -166,11 +171,18 @@ button:hover{opacity:.85}
   </div>
 </div>
 
+<body>
+<div class="center">
+  <div class="card">
+    
+  </div>
+</div>
+
 <div class="bg-images">
   <img src="bg1.png" class="img-left">
   <img src="bg2.png" class="img-right">
 </div>
-
+  
 <script>
 function detect(){
   const input = document.getElementById("url");
